@@ -6,6 +6,9 @@ from .form import Consultaform
 
 def listagem_medicos(request):
     medicos= Medico.objects.all()
+    especialidade = request.GET.get('especialidade', None)
+    if especialidade:
+        medicos = medicos.filter(especialidade__icontains=especialidade)
     return render(request, 'listar_medicos.html', {'listas': medicos})
 
 def criar_Consultas(request):
