@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar medicos</title>
+</head>
+<body>
+    <h1>Resultado das buscas:</h1>
+    <ul>
+        {% for i in listas %}
+        <li>
+            {{i}}
+            <a href="{% url 'listagem_medicos' %}"></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
